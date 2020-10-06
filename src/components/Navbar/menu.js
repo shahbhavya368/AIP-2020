@@ -1,9 +1,8 @@
 import React from 'react'
-import { Layout, Header, Navigation, Drawer, Content } from "react-mdl";
+import { Layout, Header, Navigation, Content } from "react-mdl";
 import { Link } from "react-router-dom";
 
-import Main from './main'
-
+import Main from './main';
 function Menu() {
     return (
         <Layout>

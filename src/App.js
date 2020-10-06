@@ -1,4 +1,5 @@
 import React from 'react';
+import 'fontsource-roboto';
 
 import './App.css';
 import Menu from './components/Navbar/menu';
