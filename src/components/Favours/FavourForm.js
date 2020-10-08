@@ -5,9 +5,10 @@ class FavourForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      owedTo: null,
-      owedWhat: null,
-      tabNumber: null,
+      owedTo: '',
+      owedWhat: '',
+      description: '',
+      tabNumber: '',
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -21,6 +22,10 @@ class FavourForm extends React.Component {
     this.setState({
       [name]: value
     });
+  }
+
+  handleSubmit = event => {
+    console.log(this.state)
   }
 
   render() {
@@ -39,7 +44,7 @@ class FavourForm extends React.Component {
             Create Favour
           </MaterialUI.Typography>
 
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <label>
               <strong><h5>To:</h5></strong>
               <input
@@ -59,6 +64,20 @@ class FavourForm extends React.Component {
                 onChange={this.handleInputChange}
                 style={{ width: "100%", height: "25px" }} />
             </label>
+            <br />
+            <label>
+              <h5>Description:</h5>
+              <textarea
+                name="description"
+                type="text"
+                value={this.state.description}
+                onChange={this.handleInputChange}
+                style={{ width: "100%", height: "50px" }} />
+            </label>
+            <br />
+            <MaterialUI.Button type="submit" variant="contained" style={{ width: "100%", height: "40px" }} color="primary">
+              <h6>Submit</h6>
+            </MaterialUI.Button>
           </form>
         </MaterialUI.CardContent>
       </MaterialUI.Card>
